@@ -1,0 +1,20 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: exporter/otlp
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+description: Add support for configuring gRPC keepalive parameters in the OTLP gRPC exporter.
+
+# One or more tracking issues related to the change
+issues: [14502]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+notes: |
+  Users can now configure gRPC keepalive parameters including `time`, `timeout`,
+  and `permit_without_stream` via the `keepalive` field under `grpc` settings
+  in the OTLP exporter configuration. This allows fine-grained control over
+  long-lived gRPC connections to the collector backend.
