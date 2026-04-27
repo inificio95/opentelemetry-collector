@@ -1,0 +1,25 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: exporter/otlp
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+description: Add support for configurable gRPC compression algorithms in the OTLP exporter, allowing users to specify compression type (gzip, zstd, snappy, none) via configuration.
+
+# One or more tracking issues related to the change
+issues: [14502]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+notes: |
+  Users can now configure the compression algorithm used for gRPC connections in the OTLP exporter.
+  Supported values are: `gzip`, `zstd`, `snappy`, and `none` (default).
+  Example configuration:
+  ```yaml
+  exporters:
+    otlp:
+      endpoint: otelcol:4317
+      compression: gzip
+  ```
