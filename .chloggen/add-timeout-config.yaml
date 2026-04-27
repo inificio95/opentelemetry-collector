@@ -1,0 +1,21 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: exporter/otlp
+
+# A brief description of the change. Surpassing 80 chars is allowed only if there is no way to
+# make it shorter.
+note: Add timeout configuration field to OTLP exporter metrics
+
+# One or more tracking issues related to the change
+issues: [14412]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  Adds a `timeout` label to OTLP exporter metrics to allow users to
+  distinguish metrics by their configured timeout value. This is
+  consistent with the endpoint and compression labels already present
+  on OTLP exporter metrics.
