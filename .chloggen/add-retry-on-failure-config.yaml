@@ -1,0 +1,20 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus, receiver/otlp
+component: exporter/otlp
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+note: Add configurable retry-on-failure settings with exponential backoff support for OTLP exporter
+
+# One or more tracking issues related to the change
+issues: [14521]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  Adds support for configuring retry behavior on transient failures in the OTLP exporter.
+  Users can now set `initial_interval`, `max_interval`, `max_elapsed_time`, and `multiplier`
+  under the `retry_on_failure` configuration block. This allows fine-grained control over
+  how the exporter handles temporary backend unavailability without dropping telemetry data.
