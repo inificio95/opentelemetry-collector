@@ -1,0 +1,21 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: exporter/otlphttp
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+Note: The changelog entry should be a single sentence that describes the change. It should not include the PR number.
+note: Add confighttp.ClientConfig fields to OTLP HTTP exporter configuration for improved HTTP client customization
+
+# One or more tracking issues related to the change
+issues: [14412]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  Exposes HTTP client configuration options including timeout, headers,
+  TLS settings, compression, and proxy settings through the confighttp.ClientConfig
+  struct in the OTLP HTTP exporter. This aligns the OTLP HTTP exporter configuration
+  with other HTTP-based exporters in the collector.
