@@ -1,0 +1,20 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: exporter/otlphttpexporter
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+note: Add support for configurable HTTP compression (gzip, zstd, zlib, snappy, deflate) in OTLP HTTP exporter
+
+# One or more tracking issues related to the change
+issues: [14412]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  The OTLP HTTP exporter now supports configurable compression via the `compression` field
+  in the exporter configuration. Supported values are: `gzip`, `zstd`, `zlib`, `snappy`,
+  and `deflate`. This aligns the HTTP exporter compression options with those available
+  in the gRPC exporter.
